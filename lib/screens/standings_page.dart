@@ -1,27 +1,17 @@
 import 'package:flutter/material.dart';
+import '../widgets/custom_app_bar.dart';
 
 class StandingsPage extends StatelessWidget {
-  final String title;
-
-  const StandingsPage({super.key, required this.title});
+  const StandingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF181928),
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: const Color(0xFF181928),
-        centerTitle: true,
-        titleTextStyle: const TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-      ),
+      appBar: CustomAppBar(title: "Standings"),
       body: const Center(
         child: Text(
-          'Standings',
+          'Ini adalah halaman Standings!',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,

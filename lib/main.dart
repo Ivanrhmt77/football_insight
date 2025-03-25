@@ -34,9 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = const [
-    HomePage(title: 'Football Insight'),
-    StandingsPage(title: 'Standings'),
-    ProfilePage(title: 'Profile'),
+    HomePage(),
+    StandingsPage(),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
