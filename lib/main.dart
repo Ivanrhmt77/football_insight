@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'screens/home_page.dart';
+import 'screens/profile_page.dart';
+import 'screens/standings_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,15 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const MyHomePage(title: 'Flutter Demo etsssHome Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -28,66 +29,57 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-  );
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: Home', style: optionStyle),
-    Text('Index 1: Business', style: optionStyle),
-    Text('Index 2: School', style: optionStyle),
+
+  final List<Widget> _pages = const [
+    HomePage(title: 'Football Insight'),
+    StandingsPage(title: 'Standings'),
+    ProfilePage(title: 'Profile'),
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    setState(() => _selectedIndex = index);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xFF181928),
-      appBar: AppBar(title: Text(widget.title)),
-      body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Opacity(
-              opacity: _selectedIndex == 0 ? 1.0 : 0.4,
-              child: Icon(
-                _selectedIndex == 0 ? Icons.home : Icons.home_outlined,
-              ),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Opacity(
-              opacity: _selectedIndex == 1 ? 1.0 : 0.4,
-              child: Icon(
-                _selectedIndex == 1 ? Icons.article : Icons.article_outlined,
-              ),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Opacity(
-              opacity: _selectedIndex == 2 ? 1.0 : 0.4,
-              child: Icon(
-                _selectedIndex == 2
-                    ? Icons.account_circle
-                    : Icons.account_circle_outlined,
-              ),
-            ),
-            label: '',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
-        onTap: _onItemTapped,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+      backgroundColor: const Color(0xFF181928),
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: _buildBottomNavigationBar(),
+    );
+  }
+
+  Widget _buildBottomNavigationBar() {
+    return BottomNavigationBar(
+      backgroundColor: const Color(0xFF222232),
+      currentIndex: _selectedIndex,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Color.fromARGB(102, 255, 255, 255),
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      onTap: _onItemTapped,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home_outlined),
+          activeIcon: Icon(Icons.home),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.article_outlined),
+          activeIcon: Icon(Icons.article),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.account_circle_outlined),
+          activeIcon: Icon(Icons.account_circle),
+          label: '',
+        ),
+      ],
+      selectedIconTheme: const IconThemeData(
+        size: 32,
+        shadows: [Shadow(color: Colors.white, blurRadius: 7)],
       ),
+      unselectedIconTheme: const IconThemeData(size: 24),
     );
   }
 }
