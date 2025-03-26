@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/home_page.dart';
-import 'screens/profile_page.dart';
+import 'screens/player_statistics.dart';
 import 'screens/standings_page.dart';
 
 void main() {
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _pages = const [
     HomePage(),
     StandingsPage(),
-    ProfilePage(),
+    PlayerStatisticsPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -73,8 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle_outlined),
-          activeIcon: Icon(Icons.account_circle),
+          icon: Icon(Icons.leaderboard_outlined),
+          activeIcon: Icon(Icons.leaderboard),
           label: '',
         ),
       ],
