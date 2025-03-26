@@ -112,7 +112,7 @@ class MatchDetailPage extends StatelessWidget {
   Widget _buildTeamColumn(Map<String, dynamic> team) {
     return Column(
       children: [
-        Image.network(team['logo'], width: 50, height: 50),
+        Image.asset(team['logo'], width: 50, height: 50),
         const SizedBox(height: 5),
         Text(
           team['name'],
