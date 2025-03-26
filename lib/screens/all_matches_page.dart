@@ -1,97 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:football_insight/screens/all_matches_page.dart';
-import '../data/match_dummy_data.dart';
 import '../widgets/custom_app_bar.dart';
+import '../data/match_dummy_data.dart';
 import '../utils/route_animations.dart';
 import 'match_detail.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class AllMatchesPage extends StatelessWidget {
+  const AllMatchesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF181928),
-      appBar: CustomAppBar(title: "Football Insight"),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const Text(
-                    "Live Match",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(blurRadius: 20, color: Colors.grey.shade800),
-                      ],
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "assets/images/premier_league_logo.png",
-                          width: 40,
-                          height: 40,
-                        ),
-                        const SizedBox(width: 3),
-                        const Text(
-                          "Premier League",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                        const SizedBox(width: 3),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  const Text(
-                    "Matches",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const Spacer(),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        createSlideRoute(AllMatchesPage()),
-                      );
-                    },
-                    child: const Text(
-                      "See All",
-                      style: TextStyle(fontSize: 16, color: Color(0xFFD2B5FF)),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              ListView.builder(
+      appBar: CustomAppBar(
+        title: "All Matches",
+        leftIcon: Icons.arrow_back,
+        onLeftIconPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 10),
+            Expanded(
+              child: ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: 3,
+                itemCount: matchList.length,
                 itemBuilder: (context, index) {
                   final match = matchList[index];
                   final homeTeam = match['home_team'];
@@ -193,8 +130,8 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

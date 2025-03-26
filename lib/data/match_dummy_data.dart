@@ -9,7 +9,7 @@ final List<Map<String, dynamic>> matchList = [
     "stadium": "Old Trafford",
     "referee": "Michael Oliver",
     "home_team": {
-      "name": "Manchester United",
+      "name": "Man United",
       "logo": "assets/images/manutd_logo.png",
       "score": 2,
       "possession": "55%",
@@ -75,7 +75,7 @@ final List<Map<String, dynamic>> matchList = [
     "events": [
       {
         "minute": 15,
-        "team": "Manchester United",
+        "team": "Man United",
         "player": "Marcus Rashford",
         "type": "goal",
       },
@@ -93,7 +93,7 @@ final List<Map<String, dynamic>> matchList = [
       },
       {
         "minute": 75,
-        "team": "Manchester United",
+        "team": "Man United",
         "player": "Bruno Fernandes",
         "type": "goal",
       },
@@ -105,7 +105,7 @@ final List<Map<String, dynamic>> matchList = [
       },
       {
         "minute": 90,
-        "team": "Manchester United",
+        "team": "Man United",
         "player": "Casemiro",
         "type": "red_card",
       },
@@ -259,7 +259,7 @@ final List<Map<String, dynamic>> matchList = [
     "stadium": "St. James' Park",
     "referee": "Michael Oliver",
     "home_team": {
-      "name": "Newcastle United",
+      "name": "Newcastle",
       "logo": "assets/images/newcastle_logo.png",
       "score": 2,
       "possession": "55%",
@@ -292,7 +292,7 @@ final List<Map<String, dynamic>> matchList = [
       "coach": "Eddie Howe",
     },
     "away_team": {
-      "name": "Nottingham Forest",
+      "name": "Nottingham",
       "logo": "assets/images/nottingham_logo.png",
       "score": 1,
       "possession": "45%",
@@ -327,43 +327,43 @@ final List<Map<String, dynamic>> matchList = [
     "events": [
       {
         "minute": 15,
-        "team": "Newcastle United",
+        "team": "Newcastle",
         "player": "Alexander Isak",
         "type": "goal",
       },
       {
         "minute": 40,
-        "team": "Nottingham Forest",
+        "team": "Nottingham",
         "player": "Taiwo Awoniyi",
         "type": "goal",
       },
       {
         "minute": 65,
-        "team": "Newcastle United",
+        "team": "Newcastle",
         "player": "Anthony Gordon",
         "type": "goal",
       },
       {
         "minute": 70,
-        "team": "Nottingham Forest",
+        "team": "Nottingham",
         "player": "Ryan Yates",
         "type": "yellow_card",
       },
       {
         "minute": 78,
-        "team": "Newcastle United",
+        "team": "Newcastle",
         "player": "Fabian Schär",
         "type": "yellow_card",
       },
       {
         "minute": 85,
-        "team": "Nottingham Forest",
+        "team": "Nottingham",
         "player": "Morgan Gibbs-White",
         "type": "yellow_card",
       },
       {
         "minute": 90,
-        "team": "Nottingham Forest",
+        "team": "Nottingham",
         "player": "Chris Wood",
         "type": "yellow_card",
       },
@@ -424,7 +424,7 @@ final List<Map<String, dynamic>> matchList = [
       "coach": "Unai Emery",
     },
     "away_team": {
-      "name": "Tottenham Hotspur",
+      "name": "Tottenham",
       "logo": "assets/images/tottenham_logo.png",
       "score": 2,
       "possession": "52%",
@@ -459,7 +459,7 @@ final List<Map<String, dynamic>> matchList = [
     "events": [
       {
         "minute": 12,
-        "team": "Tottenham Hotspur",
+        "team": "Tottenham",
         "player": "Heung-min Son",
         "type": "goal",
       },
@@ -471,7 +471,7 @@ final List<Map<String, dynamic>> matchList = [
       },
       {
         "minute": 50,
-        "team": "Tottenham Hotspur",
+        "team": "Tottenham",
         "player": "James Maddison",
         "type": "goal",
       },
@@ -483,7 +483,7 @@ final List<Map<String, dynamic>> matchList = [
       },
       {
         "minute": 72,
-        "team": "Tottenham Hotspur",
+        "team": "Tottenham",
         "player": "Pedro Porro",
         "type": "yellow_card",
       },
@@ -550,7 +550,7 @@ final List<Map<String, dynamic>> matchList = [
       "coach": "Jürgen Klopp",
     },
     "away_team": {
-      "name": "Manchester City",
+      "name": "Man City",
       "logo": "assets/images/mancity_logo.png",
       "score": 2,
       "possession": "54%",
@@ -585,7 +585,7 @@ final List<Map<String, dynamic>> matchList = [
     "events": [
       {
         "minute": 15,
-        "team": "Manchester City",
+        "team": "Man City",
         "player": "Erling Haaland",
         "type": "goal",
       },
@@ -597,7 +597,7 @@ final List<Map<String, dynamic>> matchList = [
       },
       {
         "minute": 55,
-        "team": "Manchester City",
+        "team": "Man City",
         "player": "Phil Foden",
         "type": "goal",
       },
@@ -615,7 +615,7 @@ final List<Map<String, dynamic>> matchList = [
       },
       {
         "minute": 88,
-        "team": "Manchester City",
+        "team": "Man City",
         "player": "Rodri",
         "type": "yellow_card",
       },
