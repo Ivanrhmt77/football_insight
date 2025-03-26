@@ -3,10 +3,38 @@ import '../widgets/custom_app_bar.dart';
 import '../data/match_dummy_data.dart'; // Import data dummy
 
 class MatchDetailPage extends StatelessWidget {
-  const MatchDetailPage({super.key});
+  final int matchId; // Tambahkan parameter matchId
+
+  const MatchDetailPage({super.key, required this.matchId});
 
   @override
   Widget build(BuildContext context) {
+    // Cari pertandingan yang sesuai dengan matchId
+    final matchData = matchList.firstWhere(
+      (match) => match['match_id'] == matchId,
+      orElse: () => {},
+    );
+
+    // Jika data tidak ditemukan
+    if (matchData.isEmpty) {
+      return Scaffold(
+        backgroundColor: const Color(0xFF181928),
+        appBar: CustomAppBar(
+          title: "Detail Pertandingan",
+          leftIcon: Icons.arrow_back,
+          onLeftIconPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        body: const Center(
+          child: Text(
+            "Pertandingan tidak ditemukan",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFF181928),
       appBar: CustomAppBar(
