@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import '../widgets/custom_app_bar.dart';
-import '../data/match_dummy_data.dart'; // Import data dummy
+import '../data/match_dummy_data.dart';
 
 class MatchDetailPage extends StatelessWidget {
-  final int matchId; // Tambahkan parameter matchId
+  final int matchId;
 
   const MatchDetailPage({super.key, required this.matchId});
 
   @override
   Widget build(BuildContext context) {
-    // Cari pertandingan yang sesuai dengan matchId
     final matchData = matchList.firstWhere(
       (match) => match['match_id'] == matchId,
       orElse: () => {},
     );
 
-    // Jika data tidak ditemukan
     if (matchData.isEmpty) {
       return Scaffold(
         backgroundColor: const Color(0xFF181928),
@@ -49,7 +47,6 @@ class MatchDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Liga dan Musim
             Text(
               "${matchData['league']} - ${matchData['season']}",
               style: const TextStyle(
@@ -59,13 +56,11 @@ class MatchDetailPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            // Stadion dan Tanggal
             Text(
               "${matchData['stadium']} - ${matchData['date']} - ${matchData['time']}",
               style: const TextStyle(fontSize: 16, color: Colors.white70),
             ),
             const SizedBox(height: 20),
-            // Skor Pertandingan
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -84,7 +79,6 @@ class MatchDetailPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            // Daftar Kejadian Pertandingan
             Expanded(
               child: ListView.builder(
                 itemCount: matchData['events'].length,
